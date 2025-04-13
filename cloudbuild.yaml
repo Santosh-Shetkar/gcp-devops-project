@@ -6,7 +6,7 @@ steps:
   args:
     ['push','${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID']
 
-- name: "gke-deploy"
+- name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
   - --filename=gke-deploy.yml
