@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gcp-devops-gke
-        image: DOCKER_IMAGE_PLACEHOLDER
+        image: IMAGE_TO_REPLACE
         ports:
         - containerPort: 5000
         env:
