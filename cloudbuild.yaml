@@ -3,3 +3,7 @@ steps:
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcpdevops', '.']
 images:
 - 'gcr.io/$PROJECT_ID/gcpdevops'
+logsBucket: 'gs://gcpdevops-s'
+serviceAccount: 'projects/ds-team-384807/serviceAccounts/gcp-devops@ds-team-384807.iam.gserviceaccount.com'
+options:
+  logging: GCS_ONLY
