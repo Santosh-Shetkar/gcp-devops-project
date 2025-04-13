@@ -10,6 +10,8 @@ substitutions:
   _LOCATION: 'us'        # Replace with your desired region
   _REPOSITORY: 'gcpdevops'          # Replace with your Artifact Registry repository name
   _IMAGE: 'gcpdevopssantosh'             # Replace with your image name
+  _BUILD_TIMESTAMP: '$(date +%Y%m%d-%H%M%S)'
+
 
 logsBucket: 'gs://gcpdevops-s'
 serviceAccount: 'projects/ds-team-384807/serviceAccounts/gcp-devops@ds-team-384807.iam.gserviceaccount.com'
