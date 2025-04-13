@@ -11,7 +11,7 @@ steps:
   - run
   - --filename=gke-deploy.yml
   - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID
-  - --location=${_LOCATION}
+  - --location=us-central1-c
   - --cluster=gcp-devops
   - --namespace=gcp-devops-prod
 
