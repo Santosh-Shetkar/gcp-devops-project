@@ -1,10 +1,11 @@
 steps:
 - name: 'docker'
-  args: ['build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${_BUILD_TIMESTAMP}', '.']
-  #us-docker.pkg.dev/ds-team-384807/gcpdevops
+  args: ['build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID', '.']
+  #us-docker.pkg.dev/ds-team-384807/gcpdevopss
+  
 images:
 #- 'gcr.io/$PROJECT_ID/gcpdevops'
-- '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${_BUILD_TIMESTAMP}'
+- '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID'
 
 substitutions:
   _LOCATION: 'us'        # Replace with your desired region
