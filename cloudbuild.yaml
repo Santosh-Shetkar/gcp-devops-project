@@ -3,18 +3,18 @@ steps:
   args: ['build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID', '.']
   #us-docker.pkg.dev/ds-team-384807/gcpdevopss
 
-images:
-#- 'gcr.io/$PROJECT_ID/gcpdevops'
-- '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID'
-
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
   - --filename=gke-deploy.yml
-  - --image=gcr.io/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID
   - --location=${_LOCATION}
   - --cluster=gcp-devops
   - --namespace=gcp-devops-prod
+
+images:
+#- 'gcr.io/$PROJECT_ID/gcpdevops'
+- '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID'
 
 substitutions:
   _LOCATION: 'us'        # Replace with your desired region
