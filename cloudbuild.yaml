@@ -10,7 +10,7 @@ steps:
   args:
   - run
   - --filename=gke-deploy.yml
-  - --image=${_IMAGE_FULL_PATH}
+  - --image=${_LOCATION}-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY}/${_IMAGE}:${BUILD_ID}
   - --location=us-central1-c
   - --cluster=gcp-devops
   - --namespace=gcp-devops-prod
@@ -19,7 +19,7 @@ substitutions:
   _LOCATION: 'us'        # Replace with your desired region
   _REPOSITORY: 'gcpdevops'          # Replace with your Artifact Registry repository name
   _IMAGE: 'gcpdevopssantosh'             # Replace with your image name
-  _IMAGE_FULL_PATH: 'us-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY}/${_IMAGE}:${BUILD_ID}'
+ # _IMAGE_FULL_PATH: 'us-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY}/${_IMAGE}:${BUILD_ID}'
 
 options:
   dynamicSubstitutions: true
