@@ -11,12 +11,14 @@ steps:
   - run
   - --filename=gke-deploy.yml
   - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID
+  - --image-substitution=IMAGE_TAG
   - --location=us-central1-c
   - --cluster=gcp-devops
   - --namespace=gcp-devops-prod
 
 # images:
-#   - '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID'
+#   - '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$BUILD_ID'\
+ #us-docker.pkg.dev/ds-team-384807/gcpdevops/gcpdevopssantosh:8f90dd4d-bb9c-4e21-9e49-204948f84f90
 
 substitutions:
   _LOCATION: 'us'        # Replace with your desired region
